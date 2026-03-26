@@ -43,7 +43,7 @@ const handleSubmit = async (e) => {
         
         <form onSubmit={handleSubmit} className="flex flex-col gap-6">
           <div className="flex flex-col gap-2">
-            <label className="font-display text-[10px] uppercase opacity-50 tracking-widest">Identify</label>
+            <label className="font-display text-[10px] uppercase opacity-50 tracking-widest">Username</label>
             <input 
               type="text" 
               placeholder="Username"
@@ -53,7 +53,7 @@ const handleSubmit = async (e) => {
           </div>
           
           <div className="flex flex-col gap-2">
-            <label className="font-display text-[10px] uppercase opacity-50 tracking-widest">Secret Key</label>
+            <label className="font-display text-[10px] uppercase opacity-50 tracking-widest">Password</label>
             <input 
               type="password" 
               placeholder="••••••••"
@@ -63,7 +63,7 @@ const handleSubmit = async (e) => {
           </div>
 
           <button type="submit" className="mt-4 bg-[#5e2e15] text-[#f5ead3] p-5 font-display uppercase tracking-widest hover:bg-black transition-all">
-            {isLogin ? "Authenticate" : "Establish Identity"}
+            {isLogin ? "Login" : "Register"}
           </button>
         </form>
 
