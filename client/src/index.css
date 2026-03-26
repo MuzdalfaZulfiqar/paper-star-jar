@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.stationery-shadow {
+  box-shadow: 
+    0 10px 30px rgba(74, 69, 62, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255,255,255,0.6),
+    inset 0 -1px 0 rgba(0,0,0,0.04);
+}
+
+.paper-sheet {
+  background: #fbf9f2; /* Warm ivory with subtle yellow tint */
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.015) 1px, transparent 1px);
+  background-size: 20px 20px; /* Subtle paper grid texture */
+  border: 1px solid #e8e2d5;
+  box-shadow: 
+    inset 0 0 40px rgba(0,0,0,0.025),
+    0 4px 20px rgba(74,69,62,0.1);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+/* Stronger realistic creases */
+.crease-line {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(0,0,0,0.08), transparent);
+  box-shadow: 0 1px 2px rgba(255,255,255,0.85);
+  z-index: 5;
+}
+
+/* Top flap crease (horizontal) */
+.top-crease { top: 0; width: 100%; }
+
+/* Bottom flap crease */
+.bottom-crease { bottom: 0; width: 100%; }
+
+/* Vertical subtle fiber lines */
+.fiber-lines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 3px,
+    rgba(0,0,0,0.018) 3px,
+    rgba(0,0,0,0.018) 4px
+  );
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+
+
+@layer base {
+  body {
+    /* Deep wooden desk texture */
+    background: 
+      linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+      url('https://www.transparenttextures.com/patterns/dark-wood.png'),
+      #2c1e14;
+    overflow-y: auto;
+  }
+}
+
+/* The "Window Pane" Light Effect */
+.sunlight-overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    135deg, 
+    rgba(255, 240, 200, 0.4) 0%, 
+    rgba(255, 255, 255, 0) 50%
+  );
+  mask-image: linear-gradient(
+    45deg,
+    black 20%, transparent 25%,
+    black 30%, transparent 45%,
+    black 50%, transparent 70%
+  ); /* Creates window slat shadows */
+  pointer-events: none;
+  z-index: 40;
+}
+
+/* 90s Paper Texture */
+.paper-sheet {
+  background: #fdfaf0 !important;
+  background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png") !important;
+  box-shadow: 
+    2px 5px 15px rgba(0,0,0,0.3),
+    inset 0 0 60px rgba(210, 180, 140, 0.2) !important;
+  border: none !important;
+  border-radius: 2px;
+}
+
+/* Retro Dust/Grain effect */
+.film-grain {
+  position: fixed;
+  inset: 0;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Grain_Texture.png");
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 50;
+}
