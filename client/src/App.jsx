@@ -346,7 +346,7 @@ import { Mailbox, Lock, X, Trash2, LogOut } from "lucide-react";
 import AuthPage from "./AuthPage";
 import { useAuth } from "./AuthContext";
 
-const API_URL = "http://localhost:5000/api/letters";
+const API_URL = "https://paper-star-jar.onrender.com/api/letters";
 
 const isDelivered = (l) => new Date(l.deliverAt) <= new Date();
 
